@@ -6,7 +6,7 @@ export const verifyCertificate = async (req, res) => {
     const { certificateNo } = req.params;
 
     if(!certificateNo){
-      return res.status(400).json({
+      return res.status(200).json({
         success: false,
         message: 'Certificate number is required',
       });
@@ -17,7 +17,7 @@ export const verifyCertificate = async (req, res) => {
     });
 
     if(!certificate){
-      return res.status(400).json({
+      return res.status(200).json({
         success: false,
         message: 'Certificate not found.',
       });
@@ -57,4 +57,5 @@ export const getAllCertificates = async (req, res) => {
       message: 'Server error while fetching certificates.',
     });
   }
+
 };
