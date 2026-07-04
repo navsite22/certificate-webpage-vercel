@@ -1,4 +1,13 @@
   document.addEventListener("DOMContentLoaded", function () {
-    const loader = document.querySelector(".loader");
-    loader.style.display = "none"; // Hides the loader once the page is fully loaded
-  });
+  // Hide the loader
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.style.display = "none";
+  }
+
+  // Set the current year
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+});
